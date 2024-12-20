@@ -1,26 +1,3 @@
-# Use a base image with Java
-FROM openjdk:17-jdk-slim as build
-
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy the pom.xml and install dependencies (this allows Docker to cache the dependencies layer)
-COPY pom.xml .
-
-# Download all dependencies (but not the code yet)
-RUN ./mvnw dependency:go-offline
-
-# Copy the rest of your application code to the container
-COPY . .
-
-# Package the application (this creates the .jar file)
-RUN ./mvnw clean install
-
-# Expose port 8080 to access the app from the outside
-EXPOSE 8080
-
-# Command to run the application inside the container
-ENTRYPOINT ["java", "-jar", "/app/target/demo-deployment.jar"]
 # Use an official OpenJDK 17 runtime as the base image
 FROM openjdk:17-jdk-slim
 
