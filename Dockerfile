@@ -17,4 +17,4 @@ ENV SPRING_DATASOURCE_URL=jdbc:postgresql://dpg-ctiiqitumphs73f37uh0-a/inventory
     SPRING_DATASOURCE_PASSWORD=fH6GV2MT7l0cD536aqwwsU2HeDjvey1C
 
 # Command to run the application
-ENTRYPOINT ["java", "-jar", "/app/Inventory-management.jar"]
+ENTRYPOINT ["java", "-jar", "/app/demo_deployment.jar"]
