@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class controller {
     @GetMapping
     public String func(){
-        return "Hello world";
+        return "Hello world here is my first deployment";
     }
 }
